@@ -12,6 +12,12 @@ describe('rules tests', function() {
   beforeEach(function() {
     this.lintTree = suaveLintTree;
     this.app = { options: {} };
+    this.ui = {
+      writeLine: function() {
+        // TODO If this works, use it to write better tests?
+        // (rather than parsing the content of each file in checkJSCSRules)
+      }
+    };
 
     originLog = console.log;
     console.log = function(contents) {

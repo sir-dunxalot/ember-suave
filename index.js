@@ -8,9 +8,17 @@ module.exports = {
   name: 'ember-suave',
 
   lintTree: function(type, tree) {
+    var ui = this.ui;
+
     var jscsOptions = this.app.options.jscsOptions || {};
     jscsOptions.configPath = jscsrcBuilder(this.project);
 
-    return new JSCSFilter(tree, jscsOptions);
+    var jscsFilter = new JSCSFilter(tree, jscsOptions);
+
+    jscsFilter.logError = function(errorText) {
+      ui.writeLine(errorText);
+    };
+
+    return jscsFilter;
   }
 };
