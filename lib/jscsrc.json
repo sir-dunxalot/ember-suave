@@ -20,6 +20,10 @@
   "disallowTrailingComma": true,
   "disallowTrailingWhitespace": true,
   "disallowVar": true,
+  "excludeFiles": [
+    ".git/**",
+    "node_modules/**"
+  ],
   "requireArrayDestructuring": true,
   "requireBlocksOnNewline": true,
   "requireCamelCaseOrUpperCaseIdentifiers": true,
